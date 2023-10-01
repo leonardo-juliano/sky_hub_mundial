@@ -4,8 +4,7 @@ from scripts.settings import *
 
 class Scene:
 
-    def __init__(self):
-        
+    def __init__(self):        
         self.display = pygame.display.get_surface()
         self.all_sprites = pygame.sprite.Group()
         self.active = True
@@ -15,7 +14,7 @@ class Scene:
             if event.key == pygame.K_q:
                 self.active = False
 
-    def draw(self):
+    def draw(self, screen):
         self.all_sprites.draw(self.display)
 
     def update(self):
