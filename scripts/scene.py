@@ -4,18 +4,27 @@ from scripts.settings import *
 
 class Scene:
 
-    def __init__(self):        
+    def __init__(self):
+        
         self.display = pygame.display.get_surface()
         self.all_sprites = pygame.sprite.Group()
         self.active = True
 
-    def events(self, event):
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_q:
-                self.active = False
+        self.fade = Fade(5)
 
-    def draw(self, screen):
+    def events(self, event):
+        pass
+
+    def draw(self):
         self.all_sprites.draw(self.display)
 
     def update(self):
+        self.fade.draw()
         self.all_sprites.update()
+
+
+
+
+
+
+
